@@ -10,23 +10,10 @@ host=$(uname -n)
 kernel=$(uname -r)
 
 main(){
-    if [ "$EUID" -ne 0 ]
-    then
-        printf "${RED}"
-        echo "Please run as root"
-        printf "${WHITE}"
-        exit
-    else
-        echo " "
-        begin
-    fi
-}
-
-begin(){
     echo -n "Starting"; sleep 0.5; echo -n "."; sleep 0.5; echo -n "."; sleep 0.5; echo -n "."; sleep 0.5; echo -n "."; sleep 0.5; echo -n "."; echo " "
     echo " "
-    printf "${GREEN}"; echo -n "["; printf "${WHITE}"; echo -n "+"; printf "${GREEN}"; echo -n "]"; printf "${WHITE}"; echo -n " Host: "; echo $host
-    printf "${GREEN}"; echo -n "["; printf "${WHITE}"; echo -n "+"; printf "${GREEN}"; echo -n "]"; printf "${WHITE}"; echo -n " Kernel: "; echo $kernel
+    printf "${GREEN}"; echo -n "["; printf "${WHITE}"; echo -n "+"; printf "${GREEN}"; echo -n "]"; printf "${WHITE}"; echo -n "Host: "; echo $host
+    printf "${GREEN}"; echo -n "["; printf "${WHITE}"; echo -n "+"; printf "${GREEN}"; echo -n "]"; printf "${WHITE}"; echo -n "Kernel: "; echo $kernel
     echo " "
     starting
 }
@@ -54,7 +41,7 @@ install_tools() {
     echo "  | | | . | . | |_ -|"
     echo "  |_| |___|___|_|___|"
     printf "${WHITE}"
-    yay -S audacity acpi bluez breeze-gtk breeze cmus discord_arch_electron dunst exa feh ffmpegthumb figlet firefox gimp gtop irssi kazam lxdm lutris neofetch neovim net-tools netdiscover networkmanager nitrogen numlockx openssh openvpn pavucontrol pcmanfm php pulseaudio python2 python3 qbittorrent qtile rlwrap  terminator unzip vifm vim virt-manager wine wine-mono wine-gecko xcompmgr xorg-server xorg-xinit xorg-xrdb xorg-xprop xorg-xev xorg-setxkbmap xdg-utils xcursor-themes zip
+    yay --needed -S audacity acpi bluez breeze-gtk breeze cmus discord_arch_electron dunst exa feh ffmpegthumb figlet firefox gimp gtop irssi kazam lxdm lutris neofetch neovim net-tools netdiscover networkmanager nitrogen numlockx openssh openvpn pavucontrol pcmanfm php pulseaudio python2 python3 qbittorrent qtile rlwrap  terminator unzip vifm vim virt-manager wine wine-mono wine-gecko xcompmgr xorg-server xorg-xinit xorg-xrdb xorg-xprop xorg-xev xorg-setxkbmap xdg-utils xcursor-themes zip
 }
 
 install_fonts() {
@@ -64,7 +51,7 @@ install_fonts() {
     echo "|   __| . |   |  _|_ -|"
     echo "|__|  |___|_|_|_| |___|"
     printf "${WHITE}"
-    yay -S  font-bh-ttf ttf-font-awesome-4 ttf-ms-fonts
+    yay --needed -S font-bh-ttf ttf-font-awesome-4 ttf-ms-fonts
     mkdir -p ~/.local/share/fonts
     cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
     cd
@@ -77,7 +64,7 @@ install_nvidia() {
     echo "| | | | | | | . | | .'|"
     echo "|_|___|\_/|_|___|_|__,|"
     printf "${WHITE}"
-    yay -S nvidia nvidia-dkms nvidia-utils nvidia-settings nvidia-optictl opencl-nvidia
+    yay --needed -S nvidia nvidia-dkms nvidia-utils nvidia-settings nvidia-optictl opencl-nvidia
 }
 
 install_wine(){
@@ -87,7 +74,7 @@ install_wine(){
     echo "| | | | |   | -_|"
     echo "|_____|_|_|_|___|"
     printf "${WHIE}"
-    yay -S wine wine-mono wine-gecko vkd3d
+    yay --needed -S wine wine-mono wine-gecko vkd3d
 }
 
 install_blackarch() {
@@ -110,7 +97,7 @@ install_hacker_tools(){
     echo "|     | .'|  _| '_| -_|  _|    | | | . | . | |_ -|"
     echo "|__|__|__,|___|_,_|___|_|      |_| |___|___|_|___|"
     printf "${WHITE}"
-    yay -S aircrack-ng binwalk burpsuite enum4linux gobuster hash-identifier hashcat hexedit hydra jonn maltego metasplit nikto nmap perl-image-exiftool sqlmap steghide stegsolve tor tor-browser-en torsocks whireshark wpscan zsteg
+    yay --needed -S aircrack-ng binwalk burpsuite enum4linux gobuster hash-identifier hashcat hexedit hydra jonn maltego metasplit nikto nmap perl-image-exiftool sqlmap steghide stegsolve tor tor-browser-en torsocks whireshark wpscan zsteg
 }
 
 installation() {
@@ -166,7 +153,7 @@ installation() {
     read -p "Do you want to install BlackArch repository?[Y//N]: " menu
     if [[ $menu == "Y"  || $menu == "Yes" || $menu == "y" || $menu == "yes" ]]
     then
-        echo"Installing blackarch repository"
+        echo "Installing blackarch"
         install_blackarch
     elif [[ $menu == "N"  || $menu == "No" || $menu == "n" || $menu == "no" ]]
     then
