@@ -54,7 +54,7 @@ install_tools() {
     echo "  | | | . | . | |_ -|"
     echo "  |_| |___|___|_|___|"
     printf "${WHITE}"
-    yay --needed -S audacity acpi bluez breeze-gtk breeze cmus discord_arch_electron dunst exa feh ffmpegthumb figlet firefox gimp gtop irssi kazam lxdm lutris neofetch neovim net-tools netdiscover networkmanager nitrogen numlockx openssh openvpn pavucontrol pcmanfm php pulseaudio python2 python3 qbittorrent qtile rlwrap  terminator unzip vifm vim virt-manager wine wine-mono wine-gecko xcompmgr xorg-server xorg-xinit xorg-xrdb xorg-xprop xorg-xev xorg-setxkbmap xdg-utils xcursor-themes zip
+    yay --needed --noconfirm -S audacity acpi bluez breeze-gtk breeze cmus discord_arch_electron dunst exa feh ffmpegthumb figlet firefox gimp gtop irssi kazam lxdm lutris neofetch neovim net-tools netdiscover networkmanager nitrogen numlockx openssh openvpn pavucontrol pcmanfm php pulseaudio python2 python3 qbittorrent qtile rlwrap terminator unzip vifm vim virt-manager wine wine-mono wine-gecko xcompmgr xorg-server xorg-xinit xorg-xrdb xorg-xprop xorg-xev xorg-setxkbmap xdg-utils xcursor-themes zip
 }
 
 install_fonts() {
@@ -64,7 +64,7 @@ install_fonts() {
     echo "|   __| . |   |  _|_ -|"
     echo "|__|  |___|_|_|_| |___|"
     printf "${WHITE}"
-    yay --needed -S font-bh-ttf ttf-font-awesome-4 ttf-ms-fonts
+    yay --needed --noconfirm -S font-bh-ttf ttf-font-awesome-4 ttf-ms-fonts ttf-joypixels
     mkdir -p ~/.local/share/fonts
     cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
     cd
@@ -77,7 +77,7 @@ install_nvidia() {
     echo "| | | | | | | . | | .'|"
     echo "|_|___|\_/|_|___|_|__,|"
     printf "${WHITE}"
-    yay --needed -S nvidia nvidia-dkms nvidia-utils nvidia-settings nvidia-optictl opencl-nvidia
+    yay --needed --noconfirm -S nvidia nvidia-dkms nvidia-utils nvidia-settings nvidia-optictl opencl-nvidia
 }
 
 install_wine(){
@@ -87,7 +87,7 @@ install_wine(){
     echo "| | | | |   | -_|"
     echo "|_____|_|_|_|___|"
     printf "${WHIE}"
-    yay --needed -S wine wine-mono wine-gecko vkd3d
+    yay --needed --noconfirm -S wine wine-mono wine-gecko vkd3d
 }
 
 install_blackarch() {
@@ -99,7 +99,6 @@ install_blackarch() {
     printf "${WHITE}"
     curl -O https://blackarch.org/strap.sh
     ./strap.sh
-    pacman -Sg | grep blackarch
     rm strap.sh
 }
 
@@ -110,16 +109,16 @@ install_hacker_tools(){
     echo "|     | .'|  _| '_| -_|  _|    | | | . | . | |_ -|"
     echo "|__|__|__,|___|_,_|___|_|      |_| |___|___|_|___|"
     printf "${WHITE}"
-    yay --needed -S aircrack-ng binwalk burpsuite enum4linux gobuster hash-identifier hashcat hexedit hydra jonn maltego metasplit nikto nmap perl-image-exiftool sqlmap steghide stegsolve tor tor-browser-en torsocks whireshark wpscan zsteg
+    yay --needed --noconfirm -S aircrack-ng binwalk burpsuite enum4linux gobuster hash-identifier hashcat hydra jonn maltego metasplit nikto nmap perl-image-exiftool sqlmap steghide stegsolve tor tor-browser-en torsocks whireshark wpscan zsteg proxychains-ng
 }
 
 installation() {
     #preparation
-    pacman -S git
+    pacman --noconfirm -S git
     git clone https://aur.archlinux.org/yay.git
     cd yay
     makepkg -si
-    yay --needed -S curl
+    yay --needed --noconfirm -S curl
     yay -Syyu
     cd
 
