@@ -25,8 +25,8 @@ main(){
 begin(){
     echo -n "Starting"; sleep 0.5; echo -n "."; sleep 0.5; echo -n "."; sleep 0.5; echo -n "."; sleep 0.5; echo -n "."; sleep 0.5; echo -n "."; echo " "
     echo " "
-    printf "${GREEN}"; echo -n "["; printf "${WHITE}"; echo -n "+"; printf "${GREEN}"; echo -n "]"; printf "${WHITE}"; echo -n "Host: "; echo $host
-    printf "${GREEN}"; echo -n "["; printf "${WHITE}"; echo -n "+"; printf "${GREEN}"; echo -n "]"; printf "${WHITE}"; echo -n "Kernel: "; echo $kernel
+    printf "${GREEN}"; echo -n "["; printf "${WHITE}"; echo -n "+"; printf "${GREEN}"; echo -n "]"; printf "${WHITE}"; echo -n " Host: "; echo $host
+    printf "${GREEN}"; echo -n "["; printf "${WHITE}"; echo -n "+"; printf "${GREEN}"; echo -n "]"; printf "${WHITE}"; echo -n " Kernel: "; echo $kernel
     echo " "
     starting
 }
