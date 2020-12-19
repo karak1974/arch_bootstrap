@@ -10,6 +10,19 @@ host=$(uname -n)
 kernel=$(uname -r)
 
 main(){
+    if [ "$EUID" -ne 0 ]
+    then
+        printf "${RED}"
+        echo "Please run as root"
+        printf "${WHITE}"
+        exit
+    else
+        echo " "
+        begin
+    fi
+}
+
+begin(){
     echo -n "Starting"; sleep 0.5; echo -n "."; sleep 0.5; echo -n "."; sleep 0.5; echo -n "."; sleep 0.5; echo -n "."; sleep 0.5; echo -n "."; echo " "
     echo " "
     printf "${GREEN}"; echo -n "["; printf "${WHITE}"; echo -n "+"; printf "${GREEN}"; echo -n "]"; printf "${WHITE}"; echo -n "Host: "; echo $host
@@ -106,7 +119,7 @@ installation() {
     git clone https://aur.archlinux.org/yay.git
     cd yay
     makepkg -si
-    yay -S curl
+    yay --needed -S curl
     yay -Syyu
     cd
 
