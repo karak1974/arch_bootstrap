@@ -127,7 +127,7 @@ installation() {
     read -p "Do you want to install tools?[Y//N]: " menu
     if [[ $menu == "Y"  || $menu == "Yes" || $menu == "y" || $menu == "yes" ]]
     then
-        echo -e "Installing Tools \n"
+        echo "Installing tools"
         install_tools
     elif [[ $menu == "N"  || $menu == "No" || $menu == "n" || $menu == "no" ]]
     then
@@ -140,7 +140,7 @@ installation() {
     read -p "Do you want to install custom fonts?[Y//N]: " menu
     if [[ $menu == "Y"  || $menu == "Yes" || $menu == "y" || $menu == "yes" ]]
     then
-        echo -e "Installing Fonts \n"
+        echo "Installing fonts"
         install_fonts
     elif [[ $menu == "N"  || $menu == "No" || $menu == "n" || $menu == "no" ]]
     then
@@ -153,7 +153,7 @@ installation() {
     read -p "Do you want to install nvidia driver?[Y//N]: " menu
     if [[ $menu == "Y"  || $menu == "Yes" || $menu == "y" || $menu == "yes" ]]
     then
-        echo -e "Installing nvidia driver \n"
+        echo "Installing nvidia driver"
         install_nvidia
     elif [[ $menu == "N"  || $menu == "No" || $menu == "n" || $menu == "no" ]]
     then
@@ -166,7 +166,7 @@ installation() {
     read -p "Do you want to install BlackArch repository?[Y//N]: " menu
     if [[ $menu == "Y"  || $menu == "Yes" || $menu == "y" || $menu == "yes" ]]
     then
-        echo -e "Installing BlackArch \n"
+        echo"Installing blackarch repository"
         install_blackarch
     elif [[ $menu == "N"  || $menu == "No" || $menu == "n" || $menu == "no" ]]
     then
@@ -179,7 +179,7 @@ installation() {
     read -p "Do you want to install hacher tools?[Y//N]: " menu
     if [[ $menu == "Y"  || $menu == "Yes" || $menu == "y" || $menu == "yes" ]]
     then
-        echo -e "Installing hacker tools \n"
+        echo "Installing hacker tools"
         install_hacker_tools
     elif [[ $menu == "N"  || $menu == "No" || $menu == "n" || $menu == "no" ]]
     then
