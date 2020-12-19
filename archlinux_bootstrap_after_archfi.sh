@@ -188,7 +188,7 @@ installation() {
         echo "Invalid option, continue without install hacker tools"
     fi
 
-       _done
+    _done
 }
 
 _done() {
