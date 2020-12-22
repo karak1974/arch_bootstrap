@@ -98,7 +98,7 @@ install_blackarch() {
     echo "|_____|_|__,|___|_,_|__|__|_| |___|_|_|"
     printf "${WHITE}"
     curl -O https://blackarch.org/strap.sh
-    ./strap.sh
+    sudo ./strap.sh
     rm strap.sh
 }
 
