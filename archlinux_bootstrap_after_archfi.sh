@@ -64,7 +64,7 @@ install_fonts() {
     echo "|   __| . |   |  _|_ -|"
     echo "|__|  |___|_|_|_| |___|"
     printf "${WHITE}"
-    yay --needed --noconfirm -S font-bh-ttf ttf-font-awesome-4 ttf-ms-fonts ttf-joypixels
+    yay --needed --noconfirm -S font-bh-ttf ttf-font-awesome-4 ttf-ms-fonts ttf-joypixels noto-fonts nerd-fonts-hack
     mkdir -p ~/.local/share/fonts
     cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
     cd
